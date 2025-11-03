@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ocean Match</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Match pairs of ocean-themed tiles before time or guesses run out." />
 </head>
 <body>
-  
+  <header class="site-header">
+    <h1>🌊 Ocean Match</h1>
+    <p class="tagline">Flip tiles to find matching sea creatures.</p>
+  </header>
+
+  <main class="layout">
+    <!-- Instructions / Controls -->
+    <section class="panel">
+      <h2>How to Play</h2>
+      <p>
+        Flip two tiles. If they match, they stay revealed. Match all pairs
+        before the timer hits zero or you exceed the mismatch limit.
+      </p>
+
+      <div class="controls">
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty">
+          <option value="easy">Easy — 3×3</option>
+          <option value="medium">Medium — 5×4</option>
+          <option value="hard">Hard — 6×4</option>
+        </select>
+
+        <button id="new-game" class="btn btn--primary" type="button">
+          New Game
+        </button>
+      </div>
+    </section>
+
+    <!-- Game -->
+    <section class="panel">
+      <h2>Game</h2>
+      <div class="hud" role="group" aria-label="Game status">
+        <div>⏱️ Time: <span id="time">60</span>s</div>
+        <div>🏆 Matches: <span id="matches">0</span>/<span id="total">0</span></div>
+        <div>❌ Mismatches: <span id="misses">0</span>/<span id="miss-limit">0</span></div>
+      </div>
+      <div id="board" class="board" role="grid" aria-label="Memory board"></div>
+      <div id="sr-live" class="sr-only" aria-live="polite"></div>
+    </section>
+
+    <!-- Status -->
+    <section class="panel">
+      <h2>Status</h2>
+      <p id="message" class="message">Press “New Game” to begin.</p>
+    </section>
+  </main>
+
+  <!-- End-of-game dialog -->
+  <dialog id="end-dialog">
+    <form method="dialog">
+      <h3 id="end-title">Game Over</h3>
+      <p id="end-text"></p>
+      <menu>
+        <button value="close" class="btn">Close</button>
+        <button id="play-again" class="btn btn--primary">Play Again</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <footer class="site-footer">
+    <small>Built with HTML, CSS, and JavaScript. No alerts or prompts used.</small>
+  </footer>
+  <!-- Confetti overlay -->
+<canvas id="confetti"></canvas>
+  <!-- Keep this at the bottom; no inline code. -->
+  <script defer src="main.js"></script>
 </body>
 </html>
