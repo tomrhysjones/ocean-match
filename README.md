@@ -24,7 +24,7 @@ Players flip cards to uncover matching pairs of sea creatures while racing again
 - Non-matching pairs flip back over.
 - Match every pair before the timer reaches zero.
 - Avoid exceeding the mismatch limit.
-- Start a new game at any time and choose from multiple difficulty levels.
+- Start a new game at any time and choose from three difficulty levels.
 
 ---
 
@@ -35,13 +35,13 @@ Players flip cards to uncover matching pairs of sea creatures while racing again
   - Medium (5×4)
   - Hard (6×4)
 - Countdown timer
-- Mismatch tracking
 - Match counter
+- Mismatch tracking
 - Responsive layout
-- Built with CSS Grid and Flexbox
+- Built using CSS Grid and Flexbox
 - Accessible controls and live game status updates
-- Confetti celebration on victory
-- Restart game without refreshing the page
+- Confetti celebration when the player wins
+- Restart the game without refreshing the page
 
 ---
 
@@ -63,8 +63,6 @@ Players flip cards to uncover matching pairs of sea creatures while racing again
 
 # 💻 Run Locally
 
-This project is designed to run locally in your browser.
-
 Clone the repository:
 
 ```bash
@@ -77,26 +75,38 @@ Navigate into the project:
 cd ocean-match
 ```
 
-Open the application:
+Install dependencies (if required):
 
 ```bash
-open index.html
+npm install
 ```
 
-Alternatively, open the `index.html` file directly in your preferred web browser.
+Start the local development server:
+
+```bash
+npm start
+```
+
+The application will then be available locally at:
+
+```text
+http://localhost:3000
+```
+
+> **Note:** This project was developed during the early stages of my Software Engineering Immersive and was designed to run locally using a development server.
 
 ---
 
 # 📈 Future Improvements
 
 - Online leaderboard
-- Additional game themes
-- Sound effects
+- Additional ocean-themed card packs
+- Sound effects and background music
 - Card flip animations
-- Player profiles
-- Difficulty statistics
 - Save best scores using Local Storage
+- Dark mode
 - Mobile gesture improvements
+- Multiplayer mode
 
 ---
 
